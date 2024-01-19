@@ -30,7 +30,6 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
-
 @login_manager.user_loader
 def load_user(user_id):
     return db.get_or_404(Users, user_id)
@@ -70,12 +69,12 @@ class Login(FlaskForm):
 
 with app.app_context():
     db.create_all()
-    # try:
-    #     admin = Users(Email='admin@gmail.com', Name='admin', Password='123456')
-    #     db.session.add(admin)
-    #     db.session.commit()
-    # except:
-    #     pass
+    try:
+        admin = Users(Email='admin@gmail.com', Name='admin', Password='123456')
+        db.session.add(admin)
+        db.session.commit()
+    except:
+        pass
 
 
 @app.route('/')
