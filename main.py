@@ -67,14 +67,14 @@ class Login(FlaskForm):
     submit = SubmitField("login")
 
 
-with app.app_context():
-    db.create_all()
-    try:
-        admin = Users(Email='admin@gmail.com', Name='admin', Password='123456')
-        db.session.add(admin)
-        db.session.commit()
-    except:
-        pass
+# with app.app_context():
+#     db.create_all()
+    # try:
+    #     admin = Users(Email='admin@gmail.com', Name='admin', Password='123456')
+    #     db.session.add(admin)
+    #     db.session.commit()
+    # except:
+    #     pass
 
 
 @app.route('/')
