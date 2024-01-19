@@ -91,6 +91,7 @@ def login():
         admin_login = db.get_or_404(Users, id)
         if form.name.data == admin_login.Name and form.password.data == admin_login.Password:
             login_user(admin_login)
+            db.session.close()
             return redirect(url_for('home'))
         else:
             return '<h1>Wrong entry try to login again!</h1>'
@@ -137,6 +138,7 @@ def add():
             unit_amount=int(float(request.form.get("price")) * 100),
             currency="usd",
         )
+        db.session.close()
         new_entry = stock(name=request.form.get('product'), img_url=f'/images/{file.filename}',
                           img_url_2=f'/images/{file1.filename}', img_url_3=f'/images/{file2.filename}',
                           img_url_4=f'/images/{file3.filename}', img_url_5=f'/images/{file4.filename}',
