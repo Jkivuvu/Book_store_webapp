@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% from "bootstrap5/form.html" import render_form %}
+<head>
+    <title>Kivuvu Book Store</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="static/css/main.css" />
+    <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+</head>
+<header id="header">
+    <a href="{{url_for('home')}}" class="logo">The Kivuvu Store</a>
+</header>
+
+<body style="padding: 200px;">
+<div id="main">
+    {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+</div>
+</body>
+</html>
