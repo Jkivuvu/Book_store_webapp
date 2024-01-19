@@ -8,6 +8,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired
 from dotenv import load_dotenv
+import psycopg2
 import os
 import stripe
 
