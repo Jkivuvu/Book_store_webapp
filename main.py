@@ -88,10 +88,7 @@ def login():
     id = 1
     form = Login()
     if form.validate_on_submit():
-        print(form.password.data)
         admin_login = db.get_or_404(Users, id)
-        print(admin_login.Password)
-        print(admin_login.Name)
         if form.name.data == admin_login.Name and form.password.data == admin_login.Password:
             login_user(admin_login)
             return redirect(url_for('home'))
