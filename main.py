@@ -91,7 +91,6 @@ def login():
         admin_login = db.get_or_404(Users, id)
         if form.name.data == admin_login.Name and form.password.data == admin_login.Password:
             login_user(admin_login)
-            db.session.close()
             return redirect(url_for('home'))
         else:
             return '<h1>Wrong entry try to login again!</h1>'
