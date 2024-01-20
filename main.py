@@ -111,22 +111,22 @@ def add():
         try:
             file1 = request.files["picture1"]
             file1.save(os.path.join('static/images/', secure_filename(file1.filename)))
-        except PermissionError:
+        except:
             pass
         try:
             file2 = request.files["picture2"]
             file2.save(os.path.join('static/images/', secure_filename(file2.filename)))
-        except PermissionError:
+        except:
             pass
         try:
             file3 = request.files["picture3"]
             file3.save(os.path.join('static/images/', secure_filename(file3.filename)))
-        except PermissionError:
+        except:
             pass
         try:
             file4 = request.files["picture4"]
             file4.save(os.path.join('static/images/', secure_filename(file4.filename)))
-        except PermissionError:
+        except:
             pass
         # print(file.filename)
         # print(os.listdir('static/images'))
