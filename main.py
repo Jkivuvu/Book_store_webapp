@@ -104,7 +104,6 @@ def logout():
 
 
 @app.route('/add', methods=['GET', 'POST'])
-@login_required
 def add():
     if request.method == 'POST':
         file = request.files["picture"]
